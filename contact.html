@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Оставить заявку - Crystal Clear Design</title>
-  <link rel="stylesheet" href="styles_1/styles_contact.css">
+  <link rel="stylesheet" href="style/styles_contact.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
@@ -69,5 +70,49 @@
       </div>
     </footer>
   </div>
+
+  <!-- Попап в виде фотографии -->
+<div id="successPopup" class="popup-overlay">
+  <div class="popup-photo">
+    <h2>Форма успешно отправлена!</h2>
+    <p>Ожидайте сообщения!</p>
+    <button class="popup-close">закрыть</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    const popup = document.getElementById('successPopup');
+    const closeBtn = popup.querySelector('.popup-close');
+
+    // Функция показа попапа
+    function showPopup() {
+      popup.classList.add('active');
+    }
+    // Функция скрытия попапа
+    function hidePopup() {
+      popup.classList.remove('active');
+    }
+
+    // Обработка отправки формы
+    if (form) {
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // отменяем реальную отправку
+        showPopup();
+        form.reset(); // очищаем поля формы (опционально)
+      });
+    }
+
+    // Закрытие по кнопке
+    closeBtn.addEventListener('click', hidePopup);
+    // Закрытие по клику на фон (оверлей)
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) hidePopup();
+    });
+  });
+</script>
+
+</script>
 </body>
 </html>
