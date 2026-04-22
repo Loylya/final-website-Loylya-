@@ -57,13 +57,13 @@ body.contact-page .form-wrapper {
     visibility: visible;
     opacity: 1;
   }
-  /* Сам попап – как фотография */
+  
+
+
+
   .popup-photo {
     max-width: 90%;
     width: 500px;
-    background-image: url('images/popup-bg.jpg'); /* Замените на свой путь к фото */
-    background-size: cover;
-    background-position: center;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     text-align: center;
@@ -85,7 +85,7 @@ body.contact-page .form-wrapper {
     line-height: 1.4;
   }
   .popup-close {
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255, 0.9);
     border: none;
     padding: 12px 24px;
     font-size: 18px;
